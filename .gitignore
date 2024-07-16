@@ -16,6 +16,9 @@ __pycache__/
 __test__.py
 *__test__.py
 
+# any file with 'secrets' in the name
+*secrets*
+
 # Distribution / packaging
 .Python
 build/
