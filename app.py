@@ -19,7 +19,7 @@ st.set_page_config(
 )
 
 # Define the correct passcode
-correct_passcode = os.environ["SIMPLE_AUTH_PASSCODE"]
+correct_passcode = os.getenv("SIMPLE_AUTH_PASSCODE")
 
 # Function to display the passcode input box
 def display_passcode_prompt():
