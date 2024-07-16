@@ -3,6 +3,8 @@ import time
 import streamlit as st
 import pdfplumber
 import docx
+import nltk
+nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
 import tiktoken
 from openai import OpenAI
