@@ -16,7 +16,6 @@ st.set_page_config(
     layout="wide",
     page_icon="🤖📚 ",
     initial_sidebar_state="collapsed",
-    theme="light"
 )
 
 # Define the correct passcode
