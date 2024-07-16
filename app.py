@@ -1,6 +1,7 @@
 import os
 import time
 import streamlit as st
+# import streamlit_authenticator as stauth
 import pdfplumber
 import docx
 import nltk
@@ -287,7 +288,7 @@ if "embeddings" in st.session_state and st.session_state.embeddings:
     if st.session_state.messages:
         if st.session_state.needs_context:
             with st.container():
-                st.markdown("\t📂 *There is context available for this response! Open the sidebar to see it.*")
+                st.markdown('\t📂 *There is context available for this response! Open the sidebar using the "<" in the left corner to see it.*')
 
         with st.sidebar:
             for idx, message in enumerate(st.session_state.messages):

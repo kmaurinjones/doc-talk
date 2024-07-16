@@ -12,6 +12,10 @@ __pycache__/
 *DS_Store*
 */.DS_Store
 
+# __test__.py file
+__test__.py
+*__test__.py
+
 # Distribution / packaging
 .Python
 build/
