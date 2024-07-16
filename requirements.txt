@@ -1,0 +1,7 @@
+streamlit
+pdfplumber
+python-docx
+nltk
+tiktoken
+openai
+numpy
