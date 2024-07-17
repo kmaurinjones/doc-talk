@@ -129,7 +129,6 @@ else:
         
         return chunks
 
-
     # Function to calculate cosine similarity
     def cosine_similarity(vec1, vec2):
         vec1 = np.array(vec1)
@@ -181,7 +180,10 @@ else:
         Classify whether this user query is asking for information from the uploaded documents.
         Keep in mind that it is possible that the user is asking for context from the rest of the conversation, but not further document-provided context.
         Default to 1 (yes) if unsure.
-        Return exactly [1, 2] to resresent [Yes, No] respectively.
+        Return exactly [1, 2] to represent [Yes, No] respectively.
+
+        # Here are the document file paths that the user has uploaded:
+        {document_titles}
 
         # User Query
         "{user_query}"
@@ -193,9 +195,7 @@ else:
         2
         """.replace("\t", "").strip()
 
-        # response = client.chat.completions.create(model="gpt-4o", messages=[{"role": "user", "content": classify_query_base_prompt.format(document_titles=document_titles, user_query=query)}])
-        response = client.chat.completions.create(model="gpt-4o", messages=[{"role": "user", "content": classify_query_base_prompt.format(user_query=query)}])
-        
+        response = client.chat.completions.create(model="gpt-4o", messages=[{"role": "user", "content": classify_query_base_prompt.format(document_titles=document_titles, user_query=query)}])
         return response.choices[0].message.content.strip() == "1"
 
     def stream_response(response):
@@ -229,7 +229,8 @@ else:
                 full_response = ""
 
                 # Validate query
-                needs_context = query_eval(prompt, st.session_state.parsed_files.keys())
+                document_titles = ", ".join(st.session_state.parsed_files.keys())
+                needs_context = query_eval(prompt, document_titles)
                 st.session_state.needs_context = needs_context
 
                 messages = [{"role": "system", "content": "You are a helpful assistant that helps users get information from their documents."}]
