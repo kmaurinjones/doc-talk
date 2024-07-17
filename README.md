@@ -63,6 +63,9 @@ The application is also deployed and can be accessed via the following URL:
 
 Here are some screenshots of the DocTalk application in use:
 
+### Simple Passcode User Authentication
+![Simple Passcode User Authentication](./examples/passcode-example-1.png)
+
 ### Uploading and Processing Documents
 ![Uploading and Processing Documents](./examples/main-page-example-1.png)
 
