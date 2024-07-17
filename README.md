@@ -15,7 +15,7 @@
 1. **Clone the repository**:
     ```bash
     git clone https://github.com/kmaurinjones/doc-talk.git
-    cd doctalk
+    cd doc-talk
     ```
 
 2. **Create a virtual environment** (optional but recommended):
