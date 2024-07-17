@@ -81,7 +81,3 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 ## Contact
 
 For any questions or issues, please contact me at [kmaurinjones@gmail.com](mailto:kmaurinjones@gmail.com)
-
----
-
-Feel free to customize this README with more specific information related to your project and deployment details.
