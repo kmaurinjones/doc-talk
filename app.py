@@ -31,7 +31,7 @@ def display_passcode_prompt():
             st.session_state.access_granted = True
             st.experimental_rerun()
         else:
-            st.error("Incorrect passcode. Please reload the page to try again.")
+            st.error("Incorrect passcode. Please try again.")
 
 # Initialize session state variable
 if 'access_granted' not in st.session_state:
