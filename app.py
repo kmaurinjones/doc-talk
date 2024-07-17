@@ -25,7 +25,7 @@ correct_passcode = os.getenv("SIMPLE_AUTH_PASSCODE")
 def display_passcode_prompt():
     st.title("Access Required")
     st.write("Please enter the passcode to access the app.")
-    passcode = st.text_input("Passcode", type="password")
+    passcode = st.text_input("Passcode", type="password", label_visibility="hidden")
     if st.button("Submit"):
         if passcode == correct_passcode:
             st.session_state.access_granted = True
