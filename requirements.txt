@@ -1,6 +1,4 @@
 streamlit
-# streamlit-audiorec # for audio input functionality
-# streamlit-float # for floating panel component (for audio input UI)
 pdfplumber
 python-docx
 nltk
