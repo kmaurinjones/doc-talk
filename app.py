@@ -164,8 +164,8 @@ else:
                         chunks = chunk_text(text, file_name, info)
                         embeddings = []
                         for i, chunk in enumerate(chunks):
-                            # response = client.embeddings.create(input=chunk[2], model="text-embedding-3-small")
-                            response = client.embeddings.create(input=chunk[2], model="text-embedding-3-large")
+                            response = client.embeddings.create(input=chunk[2], model="text-embedding-3-small")
+                            # response = client.embeddings.create(input=chunk[2], model="text-embedding-3-large")
                             embeddings.append(response.data[0].embedding)
                             progress_bar.progress((i + 1) / len(chunks))
                         st.session_state.embeddings[file_name] = (chunks, embeddings)
