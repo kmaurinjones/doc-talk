@@ -1,6 +1,6 @@
 # DocTalk 🤖📚
 
-**DocTalk** is a Streamlit-based web application that allows users to upload and interact with their documents (PDF, DOCX, TXT) using natural language queries. The application leverages OpenAI's [GPT-4o model](https://platform.openai.com/docs/models/gpt-4o) for query validation and chatting, and [text-embedding-3-small](https://platform.openai.com/docs/guides/embeddings/embedding-models) to understand and respond to user queries based on the content of the uploaded documents.
+**DocTalk** is a Streamlit-based web application that allows users to upload and interact with their documents (PDF, DOCX, TXT) using natural language queries. The application leverages OpenAI's [GPT-4o-Mini model](https://platform.openai.com/docs/models/gpt-4o-mini) for query validation and chatting, and [text-embedding-3-small](https://platform.openai.com/docs/guides/embeddings/embedding-models) to understand and respond to user queries based on the content of the uploaded documents.
 
 ## Features
 - **Upload and Process Documents**: Upload PDF, DOCX, and TXT files for text extraction and processing.
