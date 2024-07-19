@@ -10,6 +10,9 @@ import tiktoken
 from openai import OpenAI
 import numpy as np
 
+# MODEL = "gpt-4o"
+MODEL = "gpt-4o-mini-2024-07-18"
+
 # Streamlit interface setup
 st.set_page_config(
     page_title="DocTalk 🤖📚",
@@ -98,7 +101,7 @@ else:
         return texts
 
     # Function to chunk text with overlapping sentences
-    def chunk_text(text, file_name, page_info, max_tokens=350, overlap_sentences=2):
+    def chunk_text(text, file_name, page_info, max_tokens=500, overlap_sentences=2):
         enc = tiktoken.encoding_for_model("gpt-4o")
         sentences = sent_tokenize(text)
         chunks = []
@@ -171,8 +174,8 @@ else:
                         st.session_state.embeddings[file_name] = (chunks, embeddings)
                 st.success(f"{file_name} processed.")
 
-    def query_eval(query, document_titles):
-        """Helper function GPT-4o API call that returns True if query is looking for document context and False if not."""
+    def query_eval(query, document_titles, model=MODEL):
+        """Helper function for returning MODEL API call that returns True if query is looking for document context and False if not."""
         classify_query_base_prompt = """
 
         This user query exists in the context of a RAG-style 'Chat with your documents' app.
@@ -196,7 +199,7 @@ else:
         2
         """.replace("\t", "").strip()
 
-        response = client.chat.completions.create(model="gpt-4o", messages=[{"role": "user", "content": classify_query_base_prompt.format(document_titles=document_titles, user_query=query)}])
+        response = client.chat.completions.create(model=model, messages=[{"role": "user", "content": classify_query_base_prompt.format(document_titles=document_titles, user_query=query)}])
         return response.choices[0].message.content.strip() == "1"
 
     def stream_response(response):
@@ -292,7 +295,7 @@ else:
 
                 # Generate response
                 stream = client.chat.completions.create(
-                    model="gpt-4o",
+                    model=MODEL,
                     messages=messages,
                     stream=True
                 )
