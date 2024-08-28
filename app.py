@@ -32,7 +32,7 @@ def display_passcode_prompt():
     if st.button("Submit"):
         if passcode == correct_passcode:
             st.session_state.access_granted = True
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("Incorrect passcode. Please try again.")
 
