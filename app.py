@@ -1,5 +1,7 @@
 import nltk
-nltk.download('punkt')
+# Download required NLTK data
+nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)
 import os
 import time
 import streamlit as st
@@ -45,7 +47,7 @@ if not st.session_state.access_granted:
     display_passcode_prompt()
 else:
     # setting sidebar
-    st.sidebar.title("Response Contexts")
+    st.sidebar.title("Context")
     with st.sidebar:
         st.divider() # just makes it look nicer
 
@@ -204,7 +206,7 @@ else:
 
     def stream_response(response):
         for chunk in response:
-            time.sleep(0.04) # artificial delay to make it look cooler
+            time.sleep(0.01) # artificial delay to make it look cooler
             # ignore None chunks
             if chunk or chunk == " ":
                 yield chunk.choices[0].delta.content
